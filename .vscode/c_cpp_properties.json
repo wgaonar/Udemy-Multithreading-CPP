@@ -10,9 +10,14 @@
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
             "compilerPath": "/usr/bin/g++",
-            "cStandard": "c20",
+            "cStandard":"c23",
             "cppStandard": "c++20",
-            "intelliSenseMode": "macos-clang-x64"
+            "intelliSenseMode": "macos-clang-x64",
+            "browse": {
+              "path": ["${workspaceFolder}"],
+              "limitSymbolsToIncludedHeaders": false,
+              "databaseFilename": ""
+            }
         }
     ],
     "version": 4
