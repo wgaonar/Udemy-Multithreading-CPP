@@ -75,7 +75,8 @@
     "filesystem": "cpp",
     "list": "cpp",
     "numeric": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "__verbose_abort": "cpp"
   },
   "cSpell.words": [
     "modifiability",

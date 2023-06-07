@@ -7,7 +7,7 @@ void display_vector(const std::vector<int> &vec)
 {
   std::cout << "[ ";
   for (const auto &elem: vec)
-      std::cout << elem << " ";
+    std::cout << elem << " ";
   std::cout <<  "]"<< std::endl;
 }
 
