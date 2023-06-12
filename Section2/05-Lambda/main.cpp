@@ -8,7 +8,7 @@ int main()
 
   /*
     In C++11, it must be specified with a trailing return type
-    when we have more than one statement
+    (->) when we have more than one statement
   */
   // [](int arg) -> int { arg = 2 * arg; return arg; };
 
