@@ -76,7 +76,9 @@
     "list": "cpp",
     "numeric": "cpp",
     "queue": "cpp",
-    "__verbose_abort": "cpp"
+    "__verbose_abort": "cpp",
+    "thread": "cpp",
+    "random": "cpp"
   },
   "cSpell.words": [
     "modifiability",

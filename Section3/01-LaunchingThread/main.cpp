@@ -9,8 +9,7 @@ void hello()
 }
 int main()
 {
-  // Create an std::thread object and pass the
-  // task function to the constructor
+  // Create an std::thread object and pass the task function to the constructor
   std::thread thr(hello);
 
   // Wait for the thread to complete
