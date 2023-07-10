@@ -1,12 +1,19 @@
 // Example of using a lambda expression as a thread's entry point
-// The lambda takes arguments
 #include <iostream>
 #include <thread>
 
 int main()
 {
+  int i{3};
+
   // Use the lambda expression as the thread's entry point
   std::thread thr(
+    // The first argument is the lambda expression
+    [&i] () {return i *= 2;}
+  );
+
+  // Use the lambda expression WITH arguments as the thread's entry point
+  std::thread thr2(
     // The first argument is the lambda expression
     [] (int i, int j) 
     {
@@ -18,4 +25,7 @@ int main()
 
   // Wait for the threads to complete
   thr.join();
+  thr2.join();
+
+  std::cout << "Value new value of i is now: " << i << "\n";
 }
