@@ -7,7 +7,7 @@
   Class whose member function will be used as
   the thread's entry point
 */
-class greeter
+class Greeter
 {
 public:
   // Member function with NO arguments
@@ -25,21 +25,21 @@ public:
 int main()
 {
   // Create an object of the class
-  greeter greet;
+  Greeter greet;
 
   /*
     Create an std::thread object
     Pass a pointer to the member function and
     a pointer to the object to call it on
   */
-  std::thread thr(&greeter::hello, &greet);
+  std::thread thr(&Greeter::hello, &greet);
 
   /*
     Create an std::thread object
     Pass a pointer to the member function and
     a pointer to the object to call it on and the argument
   */
-  std::thread thr2(&greeter::greetings, &greet, "String from main");
+  std::thread thr2(&Greeter::greetings, &greet, "String from main");
 
   // Wait for the threads to complete
   thr.join();
