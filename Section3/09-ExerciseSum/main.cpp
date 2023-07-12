@@ -33,23 +33,25 @@ int main()
 {
   int num1 {2}, num2 {3};
 
-  /* 
+  /*
+    Case 1: Regular function
     Create an std::thread object and pass the 
     task function to the thread constructor WITH arguments
   */
   std::thread thr1(sum, num1, num2);
 
- 
   // Create a class object
   Addition addition;
 
   /* 
-    Create an std::thread object, and pass the functor 
-    WITH arguments to the thread constructor
+    Case 2: Functor
+    Create an std::thread object, and pass the class
+    object WITH arguments to the thread constructor
   */
   std::thread thr2(addition, num1, num2);
 
   /*
+    Case 3: Member class function
     Create an std::thread object and pass a pointer 
     to the member function, a pointer to the object, and
     the arguments to call it on
@@ -57,6 +59,7 @@ int main()
   std::thread thr3(&Addition::sum, &addition, num1, num2);
 
   /*
+    Case 4: Lambda expression
     Use the lambda expression WITH arguments as the 
     thread's entry point
   */
