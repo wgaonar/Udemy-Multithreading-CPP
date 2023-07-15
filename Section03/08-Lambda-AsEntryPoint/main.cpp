@@ -27,5 +27,5 @@ int main()
   thr.join();
   thr2.join();
 
-  std::cout << "Value new value of i is now: " << i << "\n";
+  std::cout << "Value new value of i is now: " << i << "\n"; //6
 }

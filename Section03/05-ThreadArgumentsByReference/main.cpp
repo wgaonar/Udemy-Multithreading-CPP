@@ -14,7 +14,7 @@ int main()
   std::cout << "str starts with: "<< str << "\n";
 
   // Wrap argument in a call to std::ref()
-  std::thread thr(hello,std::ref(str));
+  std::thread thr(hello, std::ref(str));
 
   // Wait for the thread to complete
   thr.join();
