@@ -7,7 +7,7 @@ class Test
 {
 public:
   /*
-  = delete means the function exists but cannot be called
+  = delete, means the function exists but cannot be called
   In older C++, we had to declare the member function private
   */
 
