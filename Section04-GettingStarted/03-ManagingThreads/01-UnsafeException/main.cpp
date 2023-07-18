@@ -26,7 +26,7 @@ int main()
     thr.join();
   }
   // Error because the thread try to find a suitable handler (join.()) 
-  // within the thread, but there is none inside the hello() function
+  // within the thread entry point, i.e., inside the hello() function
   catch(const std::exception& e)
   {
     std::cerr << "Exception caught: " << e.what() << '\n'; 
