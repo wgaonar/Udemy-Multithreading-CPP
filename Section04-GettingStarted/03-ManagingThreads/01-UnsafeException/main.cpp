@@ -1,15 +1,14 @@
-// Example of a thread which throws an uncaught exception
+/*
+  Unsafe exception managing
+  What happens to an std::thread object when an exception is thrown?
+*/
+
 #include <iostream>
 #include <thread>
 
 // Task function for the thread
 void hello() 
 {
-  // Throw an exception
-  throw std::exception();
-
-  // You have to handle the exception where it is thrown.
-
   std::cout << "Hello, Thread" << "\n";
 }
 
@@ -19,6 +18,10 @@ int main()
   {
     // Create an std::thread object
     std::thread thr(hello);
+
+    // Code that might throw an exception
+    throw std::exception();
+
     // Wait for the thread to complete
     thr.join();
   }
@@ -28,7 +31,4 @@ int main()
   {
     std::cerr << "Exception caught: " << e.what() << '\n'; 
   }
-
-  // Check that the program is still running
-  std::cout << "Finished" << "\n";
 }

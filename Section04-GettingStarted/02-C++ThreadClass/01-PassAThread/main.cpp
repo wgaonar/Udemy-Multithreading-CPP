@@ -13,7 +13,7 @@ void hello()
 
 // Function taking a thread object as argument
 // The object must be moved into the argument
-void func(std::thread thr)
+void func(std::thread && thr) // The && avoid passing a no move-only object
 {
   std::cout << "Received thread with ID: " << thr.get_id() << "\n";
   
@@ -28,7 +28,7 @@ int main()
   std::thread thr(hello);
 
   // Display the child's thread ID
-  std::cout << "Hello thread has ID " << thr.get_id() << "\n";
+  std::cout << "From main, Hello thread has ID " << thr.get_id() << "\n";
 
   // Pass a named object using std::move()
   func(std::move(thr));
