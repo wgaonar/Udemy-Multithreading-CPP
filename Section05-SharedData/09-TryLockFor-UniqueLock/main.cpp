@@ -28,7 +28,6 @@ void task2()
   // lock by ourselves. Otherwise We are locking a mutex twice
   std::unique_lock<std::timed_mutex> uniq_lck(the_mutex, std::defer_lock);
 
-  // Try until "deadline" time point to lock the mutex
   while (!uniq_lck.try_lock_for(1s))
   {
     // Returned false
@@ -39,9 +38,6 @@ void task2()
   // Start of critical section
   std::cout << "Task2 has locked the mutex" << "\n";
   // End of critical section
-  
-  std::cout << "Task2 unlocking the mutex" << "\n";
-  the_mutex.unlock();
 }
 
 int main()
