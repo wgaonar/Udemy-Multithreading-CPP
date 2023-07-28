@@ -80,7 +80,8 @@
     "thread": "cpp",
     "random": "cpp",
     "shared_mutex": "cpp",
-    "condition_variable": "cpp"
+    "condition_variable": "cpp",
+    "future": "cpp"
   },
   "cSpell.words": [
     "modifiability",

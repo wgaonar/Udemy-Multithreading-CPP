@@ -41,7 +41,7 @@ int main()
   */
   std::promise<int> prom;
 
-  // Get the future associated with the promise
+  // Create the future associated with the promise
   std::future<int> fut = prom.get_future();
 
   // Start the threads
