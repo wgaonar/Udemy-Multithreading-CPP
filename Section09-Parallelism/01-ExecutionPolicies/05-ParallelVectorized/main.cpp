@@ -26,6 +26,6 @@ int main()
   std::vector<int> v(2000);
 
   // explicit sequential execution
-  std::for_each(std::execution::unseq,v.begin(), v.end(), [&](int& x){x = ++count;});
+  std::for_each(std::execution::par_unseq,v.begin(), v.end(), [&](int& x){x = ++count;});
   DisplayVectorWithAuto(v);
 }
