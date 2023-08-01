@@ -2,7 +2,7 @@
   Condition variable example
 
   The reader thread waits for a notification
-  The writer thread modifies the shared variable "sdata"
+  The writer thread modifies the shared variable "strdata"
   The writer thread sends a notification
   The reader thread receives the notification and resumes
   The reader thread uses the new value of the shared data
@@ -15,7 +15,7 @@
 using namespace std::literals;
 
 // The shared data
-std::string sdata;
+std::string strdata;
 
 // Mutex to protect critical sections
 std::mutex mut;
@@ -37,7 +37,7 @@ void reader ()
   cond_var.wait(uniq_lck);
 
   // Display the new value of the string
-  std::cout << "Data is \"" << sdata << "\n";
+  std::cout << "Data is \"" << strdata << "\n";
 
   // The condition variable has woken up thread up
   // and locked the mutex
@@ -60,7 +60,7 @@ void writer()
 
     // Modify the string
     std::cout << "Writer thread modifying data..." << "\n";
-    sdata = "Populated";
+    strdata = "Populated";
   }
   
   // Notify the condition variable
@@ -71,10 +71,10 @@ void writer()
 int main()
 {
   // Initializing the shared string
-  sdata = "Empty";
+  strdata = "Empty";
 
   // Displays its initial value
-  std::cout << "Data is \"" << sdata << "\"\n";
+  std::cout << "Data is \"" << strdata << "\"\n";
   
   // Start the read thread before to avoid lost the notification
   std::thread read(reader);
