@@ -7,7 +7,7 @@
 
 using namespace std;
 
-concurrent_queue<string> cq;
+concurrent_queue_cv<string> cq;
 
 // Waiting thread
 void reader()

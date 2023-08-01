@@ -34,5 +34,4 @@ int main()
   }
   
   std::cout << counter << "\n";
-  
 }
