@@ -47,7 +47,7 @@ int main()
   std::promise<int> prom;
 
   /* 
-    Get and  std::shared_future associated with the promise
+    Get a std::shared_future associated with the promise
     This will move the promises's future into a shared future 
   */
   std::shared_future<int> shared_fut1 = prom.get_future();

@@ -1,5 +1,6 @@
 /* 
   Example of using std::async with deferred launch option
+  for launching in the same main thread.
 */
 
 #include <iostream>

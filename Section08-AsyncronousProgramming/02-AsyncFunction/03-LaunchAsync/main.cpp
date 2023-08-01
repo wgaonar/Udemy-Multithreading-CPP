@@ -1,5 +1,6 @@
 /* 
   Example of using std::async with explicit async launch option
+  for launching in a separate thread.
 */
 
 #include <iostream>
