@@ -1,6 +1,6 @@
 /*
   Lazy initialization (multi-threaded)
-  It is now thread-safe and uses std::call_one()
+  It is now thread-safe and uses std::call_once()
   to ensure that one and only one thread initializes the
   object
 */

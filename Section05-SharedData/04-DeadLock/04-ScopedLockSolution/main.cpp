@@ -26,7 +26,7 @@ void funcA()
 
 void funcB()
 {
-    std::cout << "Thread B trying to lock mutexes 2 and 1" << "\n";
+  std::cout << "Thread B trying to lock mutexes 2 and 1" << "\n";
   std::scoped_lock scoped_lck(mut2, mut1);
   std::cout << "Thread B has locked mutexes 2 and 1" << "\n";
 

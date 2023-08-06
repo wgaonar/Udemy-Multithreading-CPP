@@ -41,7 +41,7 @@ void reader ()
 
   // The condition variable has woken up thread up
   // and locked the mutex
-  std::cout << "Reader thead unlocks the mutex" << "\n";
+  std::cout << "Reader thread unlocks the mutex" << "\n";
 }
 
 // Notifying thread

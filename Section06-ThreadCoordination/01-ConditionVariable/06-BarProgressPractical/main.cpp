@@ -15,7 +15,7 @@
 using namespace std::literals;
 
 // Shared variable for the data being fetched
-std::string sdata;
+std::string strdata;
 
 // Flags for predicates in the wait()
 bool update_progress {false};
@@ -37,15 +37,15 @@ void fetch_data ()
     std::cout << "Fetcher thread waiting for the data..." << "\n";
     std::this_thread::sleep_for(2s);
 
-    //Update sdata variable, the notify the progress bar thread
+    //Update strdata variable, the notify the progress bar thread
     std::unique_lock<std::mutex> uniq_lck(data_mutex);
-    sdata += "Block" + std::to_string(i+1);
-    std::cout << "sdata: " << sdata << "\n";
+    strdata += "Block" + std::to_string(i+1);
+    std::cout << "strdata: " << strdata << "\n";
     update_progress = true;
     uniq_lck.unlock();
     data_cv.notify_all();
   }
-  std::cout << "\nFetch sdata has ended!" << "\n";
+  std::cout << "\nFetch strdata has ended!" << "\n";
 
   // Tell the progress bar thread to exit and 
   // wake up the processing thread
@@ -67,7 +67,7 @@ void progress_bar()
     data_cv.wait(data_lck, [] {return update_progress;});
 
     // Wake up und use the new value
-    len = sdata.size();
+    len = strdata.size();
 
     // Set the flag back to false
     update_progress = false;
@@ -98,10 +98,10 @@ void process_data()
   completed_lck.unlock();
 
   std::lock_guard<std::mutex> data_lck(data_mutex);
-  std::cout << "Processing sdata: " << sdata << "\n";
+  std::cout << "Processing strdata: " << strdata << "\n";
 
   // Process the data
-  std::cout << "Process data thread has ended" << sdata << "\n";
+  std::cout << "Process data thread has ended" << strdata << "\n";
 }
 
 int main()
